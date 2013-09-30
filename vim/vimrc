@@ -1,0 +1,278 @@
+"=====================================================================
+" Utilisation de "pathogene"
+"=====================================================================
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
+
+"=====================================================================
+" Configuration globale
+"=====================================================================
+set nocompatible			" Pas de compatibilité avec vi
+
+set encoding=utf-8			" Encodage par défaut
+
+set tabstop=8				" Tabulation de 8 caractères
+set shiftwidth=8			" Idem
+set noexpandtab				" Utilise le caractère tabulation, pas des espaces
+set nostartofline			" Conserve le caractère sur la même colonne quand on change de ligne
+set autoindent				" Indentation automatique
+set smartindent				" Idem
+
+set showcmd				" Montre la commande en cours
+set ignorecase				" Pas de casse pour les recherches
+set title				" Affiche le nom et l'état du fichier dans le titre
+set nonumber				" Cache les numéro de ligne
+set laststatus=2			" Barre de status toujours visible
+set backspace=indent,eol,start		" Autorise le caractère backspace
+set ruler				" Indique la position dans le fichier
+set showmatch				" Vérification présence (, {, [ lorsqu'on tappe le caractère fermant
+set wildmenu				" Affiche la liste des commandes vim lors d'un appuis sur <tab> (ex: set hl <tab>)
+set scrolloff=5				" Garde toujours 5 lignes visibles autour du curseur
+
+set viewdir=~/.vim/saveview/		" Répertoire de sauvegarde des vues (replis manuels)
+set foldcolumn=2			" Repère visuel pour les replis
+set incsearch				" Recherche incrémentale
+set nohlsearch				" Ne colorie pas les recherches
+
+set fileformats=unix,mac,dos		" Formats de fin de ligne
+
+set nolist				" Pas de caratères non-imprimables
+set listchars=eol:¶,tab:\|\ ,trail:~	" Paramétrage des caractères non-imprimables
+
+filetype plugin indent on		" Détection automatique dutype de fichier + plugin + indentation
+
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview
+
+syntax enable				" Active la syntaxe
+set foldmethod=syntax			" Replis basé sur la syntaxe
+
+set nocursorline
+colorscheme molokai-perso
+set cursorline
+
+"=====================================================================
+" Configurations plugins
+"=====================================================================
+"	tagbar
+let g:tagbar_ctags_bin = '/usr/bin/ctags'
+let g:tagbar_autofocus = 1
+let g:tagbar_autoclose = 1
+
+"	supertab
+let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabRetainCompletionDuretaion = "completion"
+let g:SuperTabClosePreviewOnPopupClose = 1
+
+let g:SuperTabNoCompleteAfter = ['^', '\s', "'", '=>']
+
+"	syntastic
+let g:syntastic_check_on_open = 0
+
+let g:syntastic_loc_list_height = 5
+
+let g:syntastic_stl_format = '[%E{%e error(s)}%B{, }%W{%w warning(s)}]'
+
+let g:syntastic_mode_map = { 'mode': 'active',
+			   \ 'active_filetypes': ['php'],
+			   \ 'passive_filetypes': ['html', 'css'] }
+
+" 	vim-bufferline
+let g:bufferline_fname_mod = ':p:.'
+
+"	vim-airline
+let g:airline_powerline_fonts = 1
+let g:airline_section_z = '%3p%%%4l:%L%3c'
+
+let g:airline#extensions#whitespace#enabled = 0 " pas de détections des espaces (lignes vides ?)
+
+let g:airline#extensions#bufferline#enabled = 1
+
+let g:airline#extensions#syntastic#enabled = 1
+
+let g:airline#extensions#branch#enabled = 1
+
+let g:airline#extensions#tagbar#enabled = 1
+
+"=====================================================================
+" Configuration par type de fichier
+"=====================================================================
+"   Config générale
+autocmd BufEnter * set tabstop=8
+autocmd BufEnter * set shiftwidth=8
+autocmd BufEnter * set noexpandtab
+
+" 	PHP
+let php_sql_query = 1
+let php_smart_members = 1
+let php_alt_properties = 1
+let php_alt_arrays = 2
+let php_folding = 1
+let php_special_functions = 0
+let php_nested_functions = 1
+
+"	Doxygen
+autocmd BufEnter *.doc set filetype=doxygen
+let g:doxygen_javadoc_autobrief = 0
+
+"	Twig
+autocmd BufEnter *.twig set filetype=htmljinja
+
+"	MySQL
+autocmd BufEnter *.mysql.sql set filetype=sqlmysql
+
+"	YML : tabulation de 4, avec expansion en espaces
+autocmd BufEnter *.yml set tabstop=4
+autocmd BufEnter *.yml set shiftwidth=4
+autocmd BufEnter *.yml set expandtab
+
+"=====================================================================
+" Replacer le curseur à la dernière édition
+"=====================================================================
+set viminfo='10,\"100,:20,%,n~/.viminfo
+autocmd BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe "norm '\""|else|exe "norm $"|endif|endif
+
+"=====================================================================
+" Omni-Completion
+"=====================================================================
+autocmd FileType html		set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType htmljinja	set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css		set omnifunc=csscomplete#CompleteCSS
+autocmd FileType javascript 	set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType c		set omnifunc=ccomplete#Complete
+autocmd FileType php		set omnifunc=phpcomplete#CompletePHP
+autocmd FileType sql		set omnifunc=sqlcomplete#Complete
+autocmd FileType xml		set omnifunc=xmlcomplete#CompleteTags
+
+"=====================================================================
+" Gestion dictionnaire
+"=====================================================================
+if has("spell")
+	setlocal spell spelllang=
+
+	map ,lf :setlocal spell spelllang=fr<CR>
+	map ,le :setlocal spell spelllang=en<CR>
+endif
+
+set dictionary+=/usr/share/dict/french
+set spellsuggest=5
+
+autocmd BufEnter *.tex set spell
+autocmd BufEnter *.tex set spelllang=fr
+
+"=====================================================================
+" Personnalisation barre de status
+"=====================================================================
+set statusline=%f%m%r%h%w\ \ \ \ \ [%{&fileencoding}]\ \ \ \ [%{&fileformat}]\ \ \ \ [%Y]\ \ \ \ [%l,\ %c-%v]\ \ \ \ [%p%%]\ \ \ \ [%L\ lignes]\ \ \ \ %{SyntasticStatuslineFlag()}
+
+"=====================================================================
+" Modification de l'affichage des replis
+"=====================================================================
+function! MyFoldFunction()
+	let line = getline(v:foldstart)
+	"Cleanup unwanted things in first line
+	let sub = substitute(line, '/\*\|\*/\|^\s+', '', 'g')
+	"Calculate lines in folded text
+	let lines = v:foldend - v:foldstart + 1
+	return v:folddashes.sub.' {...'.lines.' lignes...}'
+endfunction
+
+set foldtext=MyFoldFunction()
+
+"=====================================================================
+" Poser une marque visible avec F7
+"=====================================================================
+hi Mark guibg=indianred guifg=white gui=bold cterm=bold ctermfg=7 ctermbg=1
+sign define mark text=!> texthl=Mark
+map <F7> :exe 'sign place 001 name=mark line='.line(".").' buffer='.winbufnr(0)<CR>
+map <S-F7> :sign unplace<CR>
+
+"=====================================================================
+" Fonctions
+"=====================================================================
+function A_askFile(text) abort
+	call inputsave()
+	let g:Filename = input(a:text, "", "file")
+	call inputrestore()
+endfunction
+
+"=====================================================================
+" Raccourcis
+"=====================================================================
+
+" Déplacement ligne vers le haut / bas
+:nnoremap <silent> <C-Down> ddp
+:nnoremap <silent> <C-Up> ddkP
+
+:inoremap <silent> <C-Down> <Esc>ddpi
+:inoremap <silent> <C-Up> <Esc>ddkPi
+
+:vnoremap <silent> <C-Down> dp
+:vnoremap <silent> <C-Up> dkP
+
+" (dé)Pliage de code
+:nmap <silent> <C-Left> zc
+:nmap <silent> <C-Right> zo
+:nmap <silent> <C-S-Left> :%foldc!<CR>
+
+:imap <silent> <C-Left> <Esc>zcki
+:imap <silent> <C-Right> <Esc>zoi
+:imap <silent> <C-S-Left> <Esc>:%foldc!<CR>i
+
+:vmap <silent> <C-Left> zcgv
+:vmap <silent> <C-Right> zogv
+:vmap <silent> <C-S-Left> :foldc!<CR>gv
+
+" (dé)Commenter
+:nmap <silent> <F12> <Leader>c<space>
+:imap <silent> <F12> <Esc><Leader>c<space>i
+:vmap <silent> <F12> <Leader>c<space>gv
+
+:nmap <silent> <S-F12> <Leader>cs
+:imap <silent> <S-F12> <Leader>cs
+:vmap <silent> <S-F12> <Leader>csgv
+
+" Gestion d'onglet
+:nmap <silent> <M-Left> gT
+:nmap <silent> <M-Right> gt
+:nmap <silent>  :call A_askFile("File to open : ")<CR>:exec ":tabnew ". Filename<CR>
+
+:imap <silent> <M-Left> <Esc>gTi
+:imap <silent> <M-Right> <Esc>gti
+
+:vmap <silent> <M-Left> gT
+:vmap <silent> <M-Right> gt
+
+" (dé)Indentation
+:nmap <silent> <Tab> >>
+:nmap <silent> <S-Tab> <<
+
+:imap <silent> <S-Tab> <Esc><<i
+
+:vmap <silent> <Tab> >gv
+:vmap <silent> <S-Tab> <gv
+
+" Autocomplétion
+:imap <silent> <F2> 
+:imap <silent> <F3> 
+:imap <silent> <F4> 
+
+" Opérations standard
+":nmap <C-x> "+x
+":nmap <C-c> "+c
+":nmap <C-v> "+gP
+:nmap <C-a> ggVG
+
+" NERD Tree : Arbre de navigation
+:nmap <silent> <F9> :NERDTreeToggle<CR>
+
+" Liste de tags
+:nmap <silent> <F8> :TagbarToggle<CR>
+
+" Syntastic
+:nmap <silent> <F6> :SyntasticCheck<CR>:Errors<CR>
+:nmap <silent> <S-F6> :SyntasticReset<CR>:SyntasticCheck<CR>
+:nmap <silent> <C-F6> :SyntasticCheck<CR>
+
+" Autres
+:nmap <silent> <C-F5> :w<CR>:e<CR>
