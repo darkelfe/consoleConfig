@@ -49,7 +49,6 @@ PROMPT="%{${fg_bold[red]}%}%n%{${fg[blue]}%}@%{${fg[green]}%}%m %{${fg[magenta]}
 export MOZILLA_FIVE_HOME=/usr/lib/mozilla
 
 #	Options
-compdef apti=aptitude
 alias -s pdf='okular'
 setopt autocd correctall
 
