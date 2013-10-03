@@ -62,7 +62,4 @@ alias vim='vim -p'			# Ouvre les paramètres comme des onglets au lieu de buffer
 alias cclive='cclive -c'		# Continue automatiquement les DL
 alias cclive-best='cclive -f best'	# DL avec la qualité max
 
-alias maj="apti update && apti full-upgrade"
-alias maj_vim="~/.vim/maj_bundle.sh"
-
 alias 7z_max="7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on"
