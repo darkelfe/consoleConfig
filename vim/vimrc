@@ -59,13 +59,6 @@ let g:tagbar_ctags_bin = '/usr/bin/ctags'
 let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
 
-"	supertab
-let g:SuperTabDefaultCompletionType = "context"
-let g:SuperTabRetainCompletionDuretaion = "completion"
-let g:SuperTabClosePreviewOnPopupClose = 1
-
-let g:SuperTabNoCompleteAfter = ['^', '\s', "'", '=>', ')', '|', '&', ';']
-
 "	syntastic
 let g:syntastic_check_on_open = 0
 
@@ -76,9 +69,6 @@ let g:syntastic_stl_format = '[%E{%e error(s)}%B{, }%W{%w warning(s)}]'
 let g:syntastic_mode_map = { 'mode': 'active',
 			   \ 'active_filetypes': ['php'],
 			   \ 'passive_filetypes': ['html', 'css'] }
-
-" 	vim-bufferline
-let g:bufferline_fname_mod = ':p:.'
 
 "	vim-airline
 let g:airline_powerline_fonts = 1

@@ -5,15 +5,15 @@
 [submodule "vim/bundle/html5.vim"]
 	path = vim/bundle/html5.vim
 	url = https://github.com/othree/html5.vim
-[submodule "vim/bundle/vim-bufferline"]
-	path = vim/bundle/vim-bufferline
-	url = https://github.com/bling/vim-bufferline.git
+;[submodule "vim/bundle/vim-bufferline"]
+	;path = vim/bundle/vim-bufferline
+	;url = https://github.com/bling/vim-bufferline.git
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
-[submodule "vim/bundle/supertab"]
-	path = vim/bundle/supertab
-	url = https://github.com/ervandew/supertab.git
+;[submodule "vim/bundle/supertab"]
+	;path = vim/bundle/supertab
+	;url = https://github.com/ervandew/supertab.git
 [submodule "vim/bundle/vim-jquery"]
 	path = vim/bundle/vim-jquery
 	url = https://github.com/itspriddle/vim-jquery.git
