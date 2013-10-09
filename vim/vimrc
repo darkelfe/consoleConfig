@@ -76,11 +76,7 @@ let g:airline_section_z = '%3p%%%4l:%L%3c'
 
 let g:airline#extensions#whitespace#enabled = 0 " pas de détections des espaces (lignes vides ?)
 
-let g:airline#extensions#bufferline#enabled = 1
-
 let g:airline#extensions#syntastic#enabled = 1
-
-let g:airline#extensions#branch#enabled = 1
 
 let g:airline#extensions#tagbar#enabled = 1
 
