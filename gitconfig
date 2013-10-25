@@ -1,0 +1,25 @@
+[user]
+	name = darkelfe
+	email = jul.rosset@gmail.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[alias]
+	co = commit 
+	com = commit -m
+	coa = commit -a
+	coam = commit -am
+	ck = checkout
+	st = status
+	br = branch
+	link = branch --track
+	ln = log -n
+	lns = log --stat -n
+	ls = log --stat
+	uf = checkout --
+	cb = checkout
+	push = push --tags
+[core]
+	editor = vim
+	autocrlf = true

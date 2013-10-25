@@ -115,9 +115,10 @@ autocmd BufEnter *.twig set filetype=htmljinja
 autocmd BufEnter *.mysql.sql set filetype=sqlmysql
 
 "	YML : tabulation de 4, avec expansion en espaces
-autocmd BufEnter *.yml set tabstop=4
-autocmd BufEnter *.yml set shiftwidth=4
-autocmd BufEnter *.yml set expandtab
+autocmd BufEnter *.yml set tabstop=4|set shiftwidth=4|set expandtab
+
+"	Ruby (apti) : tabulation de 2, avec expansion en espaces
+autocmd BufEnter apti set tabstop=2|set shiftwidth=2|set expandtab
 
 "=====================================================================
 " Replacer le curseur à la dernière édition
