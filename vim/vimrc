@@ -118,7 +118,8 @@ autocmd BufEnter *.mysql.sql set filetype=sqlmysql
 autocmd BufEnter *.yml set tabstop=4|set shiftwidth=4|set expandtab
 
 "	Ruby (apti) : tabulation de 2, avec expansion en espaces
-autocmd BufEnter apti set tabstop=2|set shiftwidth=2|set expandtab
+autocmd BufNewFile *.rb	so ~/.vim/headers/ruby.vim
+autocmd BufEnter apti	set tabstop=2|set shiftwidth=2|set expandtab
 
 "=====================================================================
 " Replacer le curseur à la dernière édition
