@@ -17,6 +17,7 @@ set noexpandtab				" Utilise le caractère tabulation, pas des espaces
 set nostartofline			" Conserve le caractère sur la même colonne quand on change de ligne
 set autoindent				" Indentation automatique
 set smartindent				" Idem
+set paste				" Pas d'insertion d'indentation lors du copier-coller
 
 set showcmd				" Montre la commande en cours
 set ignorecase				" Pas de casse pour les recherches
@@ -165,11 +166,14 @@ set statusline=%f%m%r%h%w\ \ \ \ \ [%{&fileencoding}]\ \ \ \ [%{&fileformat}]\ \
 "=====================================================================
 function! MyFoldFunction()
 	let line = getline(v:foldstart)
+	
 	"Cleanup unwanted things in first line
-	let sub = substitute(line, '/\*\|\*/\|^\s+', '', 'g')
+	let sub_space = substitute(line, '/\*\|\*/\|{', '', 'g')
+	let sub = substitute(sub_space, '\(^\s*\)\@<=\s', '-', 'g')
+
 	"Calculate lines in folded text
 	let lines = v:foldend - v:foldstart + 1
-	return v:folddashes.sub.' {...'.lines.' lignes...}'
+	return sub.' {...'.lines.' lignes...}'
 endfunction
 
 set foldtext=MyFoldFunction()
