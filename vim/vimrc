@@ -17,7 +17,6 @@ set noexpandtab				" Utilise le caractère tabulation, pas des espaces
 set nostartofline			" Conserve le caractère sur la même colonne quand on change de ligne
 set autoindent				" Indentation automatique
 set smartindent				" Idem
-set paste				" Pas d'insertion d'indentation lors du copier-coller
 
 set showcmd				" Montre la commande en cours
 set ignorecase				" Pas de casse pour les recherches
@@ -195,6 +194,28 @@ function A_askFile(text) abort
 	call inputrestore()
 endfunction
 
+function A_setPasteMode ()
+	set paste
+endfunction
+function A_setNoPasteMode ()
+	set nopaste
+endfunction
+
+" Couper, copier et coller avec le presse-papier du système
+if has('x11') && has('clipboard')
+	:nmap <C-S-x> "+dd
+	:nmap <C-S-c> "+yy
+	:nmap <C-S-v> "+p
+
+	:vmap <C-S-x> "+d
+	:vmap <C-S-c> "+ygv
+	:vmap <C-S-v> "+p
+
+	:imap <C-S-x> <Esc>"+ddi
+	:imap <C-S-c> <Esc>"+yyi
+	:imap <C-S-v> <Esc>"+pi
+endif
+
 "=====================================================================
 " Raccourcis
 "=====================================================================
@@ -257,10 +278,7 @@ endfunction
 :imap <silent> <F4> 
 
 " Opérations standard
-":nmap <C-x> "+x
-":nmap <C-c> "+c
-":nmap <C-v> "+gP
-:nmap <C-a> ggVG
+:nmap <C-S-a> ggVG
 
 " NERD Tree : Arbre de navigation
 :nmap <silent> <F9> :NERDTreeToggle<CR>
