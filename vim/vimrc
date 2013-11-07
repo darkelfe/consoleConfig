@@ -172,7 +172,7 @@ function! MyFoldFunction()
 
 	"Calculate lines in folded text
 	let lines = v:foldend - v:foldstart + 1
-	return sub.' {...'.lines.' lignes...}'
+	return sub.' {...'.lines.' lignes...} '
 endfunction
 
 set foldtext=MyFoldFunction()
@@ -203,17 +203,17 @@ endfunction
 
 " Couper, copier et coller avec le presse-papier du système
 if has('x11') && has('clipboard')
-	:nmap <C-S-x> "+dd
-	:nmap <C-S-c> "+yy
-	:nmap <C-S-v> "+p
+	:nmap <silent> <C-F10> "+dd
+	:nmap <silent> <S-F10> "+yy
+	:nmap <silent> <F10> "+p
 
-	:vmap <C-S-x> "+d
-	:vmap <C-S-c> "+ygv
-	:vmap <C-S-v> "+p
+	:vmap <silent> <C-F10> "+d
+	:vmap <silent> <S-F10> "+ygv
+	:vmap <silent> <F10> "+p
 
-	:imap <C-S-x> <Esc>"+ddi
-	:imap <C-S-c> <Esc>"+yyi
-	:imap <C-S-v> <Esc>"+pi
+	:imap <silent> <C-F10> <Esc>"+ddi
+	:imap <silent> <S-F10> <Esc>"+yyi
+	:imap <silent> <F10> <Esc>"+pi
 endif
 
 "=====================================================================
