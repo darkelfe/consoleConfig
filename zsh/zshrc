@@ -57,9 +57,14 @@ alias ls='ls --color=auto --group-directories-first -Fh'
 alias ll='ls -l'
 alias la='ll -a'
 
+alias tree='tree -C --dirsfirst'
+
 alias vim='vim -p'			# Ouvre les paramètres comme des onglets au lieu de buffers
 
 alias cclive='cclive -c'		# Continue automatiquement les DL
 alias cclive-best='cclive -f best'	# DL avec la qualité max
 
 alias 7z_max="7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on"
+
+alias df='df -hT'
+alias du='du -sh'
