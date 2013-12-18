@@ -73,8 +73,7 @@ let g:syntastic_mode_map = { 'mode': 'active',
 "	vim-airline
 let g:airline_powerline_fonts = 1
 
-"let g:airline_section_c = '%f ▶◀ %F'
-let g:airline_section_c = '%f'
+let g:airline_section_c = '%f ▶◀ %F'
 let g:airline_section_z = '%3p%%%4l:%L%3c'
 
 let g:airline#extensions#whitespace#enabled = 0 " pas de détections des espaces (lignes vides ?)

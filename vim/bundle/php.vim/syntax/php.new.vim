@@ -1183,7 +1183,7 @@ syn case ignore
   " Magic Constants {{{2
     syn cluster phpClConstants add=phpMagicConstant
     syn case match
-    syn keyword	phpMagicConstant contained __LINE__ __FILE__ __DIR__ __FUNCTION__ __METHOD__ __CLASS__ __NAMESPACE__ __TRAIT__
+    syn keyword	phpMagicConstant contained __LINE__ __FILE__ __FUNCTION__ __METHOD__ __CLASS__ __NAMESPACE__
     syn case ignore
   " }}}2
 
@@ -1333,7 +1333,7 @@ syn case ignore
 
   " Classes / Objects
   " NOTE: call_user_method_array() and call_user_method() are both deprecated ...
-  syn keyword phpFunctions contained class_exists get_class_methods get_class_vars get_class get_called_class get_declared_classes get_declared_interfaces get_object_vars get_parent_class interface_exists is_a is_subclass_of method_exists property_exists
+  syn keyword phpFunctions contained class_exists get_class_methods get_class_vars get_class get_declared_classes get_declared_interfaces get_object_vars get_parent_class interface_exists is_a is_subclass_of method_exists property_exists
 
   " COM
   syn keyword phpCoreConstant contained CLSCTX_INPROC_SERVER CLSCTX_INPROC_HANDLER CLSCTX_LOCAL_SERVER CLSCTX_REMOTE_SERVER CLSCTX_SERVER CLSCTX_ALL VT_NULL VT_EMPTY VT_UI1 VT_I2 VT_I4 VT_R4 VT_R8 VT_BOOL VT_ERROR VT_CY VT_DATE VT_BSTR VT_DECIMAL VT_UNKNOWN VT_DISPATCH VT_VARIANT VT_I1 VT_UI2 VT_UI4 VT_INT VT_UINT VT_ARRAY VT_BYREF CP_ACP CP_MACCP CP_OEMCP CP_UTF7 CP_UTF8 CP_SYMBOL CP_THREAD_ACP VARCMP_LT VARCMP_EQ VARCMP_GT VARCMP_NULL NORM_IGNORECASE NORM_IGNORENONSPACE NORM_IGNORESYMBOLS NORM_IGNOREWIDTH NORM_IGNOREKANATYPE NORM_IGNOREKASHIDA DISP_E_DIVBYZERO DISP_E_OVERFLOW MK_E_UNAVAILABLE
@@ -1701,7 +1701,7 @@ syn case ignore
   syn keyword	phpFunctions	bcadd bccomp bcdiv bcmod bcmul bcpow bcpowmod bcscale bcsqrt bcsub	contained
   syn keyword	phpFunctions	bzclose bzcompress bzdecompress bzerrno bzerror bzerrstr bzflush bzopen bzread bzwrite	contained
   syn keyword	phpFunctions	cal_days_in_month cal_from_jd cal_info cal_to_jd easter_date easter_days frenchtojd gregoriantojd jddayofweek jdmonthname jdtofrench jdtogregorian jdtojewish jdtojulian jdtounix jewishtojd juliantojd unixtojd	contained
-  syn keyword	phpFunctions	call_user_method_array call_user_method class_exists get_class_methods get_class_vars get_class get_called_class get_declared_classes get_object_vars get_parent_class is_a is_subclass_of method_exists property_exists contained
+  syn keyword	phpFunctions	call_user_method_array call_user_method class_exists get_class_methods get_class_vars get_class get_declared_classes get_object_vars get_parent_class is_a is_subclass_of method_exists property_exists contained
   syn keyword	phpFunctions	com VARIANT com_addref com_get com_invoke com_isenum com_load_typelib com_load com_propget com_propput com_propset com_release com_set	contained
   syn keyword	phpFunctions	cpdf_add_annotation cpdf_add_outline cpdf_arc cpdf_begin_text cpdf_circle cpdf_clip cpdf_close cpdf_closepath_fill_stroke cpdf_closepath_stroke cpdf_closepath cpdf_continue_text cpdf_curveto cpdf_end_text cpdf_fill_stroke cpdf_fill cpdf_finalize_page cpdf_finalize cpdf_global_set_document_limits cpdf_import_jpeg cpdf_lineto cpdf_moveto cpdf_newpath cpdf_open cpdf_output_buffer cpdf_page_init cpdf_place_inline_image cpdf_rect cpdf_restore cpdf_rlineto cpdf_rmoveto cpdf_rotate_text cpdf_rotate cpdf_save_to_file cpdf_save cpdf_scale cpdf_set_action_url cpdf_set_char_spacing cpdf_set_creator cpdf_set_current_page cpdf_set_font_directories cpdf_set_font_map_file cpdf_set_font cpdf_set_horiz_scaling cpdf_set_keywords cpdf_set_leading cpdf_set_page_animation cpdf_set_subject cpdf_set_text_matrix cpdf_set_text_pos cpdf_set_text_rendering cpdf_set_text_rise cpdf_set_title cpdf_set_viewer_preferences cpdf_set_word_spacing cpdf_setdash cpdf_setflat cpdf_setgray_fill cpdf_setgray_stroke cpdf_setgray cpdf_setlinecap cpdf_setlinejoin cpdf_setlinewidth cpdf_setmiterlimit cpdf_setrgbcolor_fill cpdf_setrgbcolor_stroke cpdf_setrgbcolor cpdf_show_xy cpdf_show cpdf_stringwidth cpdf_stroke cpdf_text cpdf_translate	contained
   syn keyword	phpFunctions	crack_check crack_closedict crack_getlastmessage crack_opendict	contained
