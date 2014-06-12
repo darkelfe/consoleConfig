@@ -1,0 +1,1 @@
+/home/soludev1/Git/vim-php/syntax/php_contents.vim
