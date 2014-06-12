@@ -24,7 +24,7 @@ Plugin 'itspriddle/vim-jquery'
 Plugin 'estin/htmljinja'
 Plugin 'ChrisYip/Better-CSS-Syntax-for-Vim'
 Plugin 'noprompt/vim-yardoc'
-Plugin 'php.vim'
+Plugin 'php.vim--Hodge'
 
 call vundle#end()
 
