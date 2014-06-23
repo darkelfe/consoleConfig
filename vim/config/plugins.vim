@@ -12,6 +12,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 Plugin 'majutsushi/tagbar'
+Plugin 'jistr/vim-nerdtree-tabs'
 
 " Plugin de syntaxe
 Plugin 'othree/html5.vim'
