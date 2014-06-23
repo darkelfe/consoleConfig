@@ -1,5 +1,7 @@
 "autocmd BufEnter *.php set filetype=php_new
 
+"runtime! after/php.vim
+
 " vim-php
 let vim_php_fold_root = 0
 let vim_php_fold_comments = 0
