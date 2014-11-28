@@ -22,7 +22,8 @@ Plugin 'ChrisYip/Better-CSS-Syntax-for-Vim'
 Plugin 'noprompt/vim-yardoc'
 Plugin 'php.vim--Hodge'
 
-Plugin 'darkelfe/vim-highlight'
+"Plugin 'darkelfe/vim-highlight'
+"Plugin 'file:///home/darkelfe/Git/vim-highlight'
 
 " Thème
 Plugin 'tomasr/molokai'

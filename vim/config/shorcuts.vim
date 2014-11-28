@@ -13,6 +13,9 @@ if has('x11') && has('clipboard')
 	:imap <silent> <F10> <Esc>"+pi
 endif
 
+:nmap <C-y> :echo "id : '".synID(line("."), col("."), 0)."' - group : '".synIDattr(synID(line("."), col("."), 0), "name")."' - color : '".synIDattr(synIDtrans(synID(line("."), col("."), 0)), "name")."'"<CR>
+:nmap <S-y> :echo "id : '".synID(line("."), col("."), 1)."' - group : '".synIDattr(synID(line("."), col("."), 1), "name")."' - color : '".synIDattr(synIDtrans(synID(line("."), col("."), 1)), "name")."'"<CR>
+
 " Opérations standards
 :nmap <silent> <C-s>	:w<CR>			" Sauvegarder
 :nmap <silent> <C-q>	:q<CR>			" Ferme le fichier actuel

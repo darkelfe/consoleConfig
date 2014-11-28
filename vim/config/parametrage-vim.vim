@@ -2,7 +2,7 @@ set encoding=utf-8					" Encodage par défaut
 
 set tabstop=4						" Tabulation de 8 caractères
 set shiftwidth=4					" Idem
-set noexpandtab						" Utilise le caractère tabulation, pas des espaces
+set expandtab						" Utilise le caractère tabulation, pas des espaces
 set nostartofline					" Conserve le caractère sur la même colonne quand on change de ligne
 set autoindent						" Indentation automatique
 set smartindent						" Idem
