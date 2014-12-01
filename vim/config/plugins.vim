@@ -27,6 +27,7 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'othree/javascript-libraries-syntax.vim'
 
 "Plugin 'darkelfe/vim-highlight'
+"Plugin 'file:///home/darkelfe/Git/vim-highlight'
 
 " Thème
 Plugin 'tomasr/molokai'
