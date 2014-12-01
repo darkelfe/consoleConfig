@@ -13,6 +13,7 @@ if has('x11') && has('clipboard')
 	:imap <F10> <Esc>"+pi
 endif
 
+" Coloration syntaxique (debugage)
 :nmap <C-y> :echo "id : '".synID(line("."), col("."), 0)."' - group : '".synIDattr(synID(line("."), col("."), 0), "name")."' - color : '".synIDattr(synIDtrans(synID(line("."), col("."), 0)), "name")."'"<CR>
 :nmap <S-y> :echo "id : '".synID(line("."), col("."), 1)."' - group : '".synIDattr(synID(line("."), col("."), 1), "name")."' - color : '".synIDattr(synIDtrans(synID(line("."), col("."), 1)), "name")."'"<CR>
 
@@ -99,8 +100,6 @@ endif
 :nmap <silent> <S-F6> :SyntasticReset<CR>:SyntasticCheck<CR>
 :nmap <silent> <C-F6> :SyntasticCheck<CR>
 
-" Coloration syntaxique (debugage)
-:nmap <silent> <C-y> :echo 'id : '.synID(line('.'), col('.'), 0).' - rule : '.synIDattr(synID(line('.'), col('.'), 0), 'name').' - highlight : '.synIDattr(synIDtrans(synID(line('.'), col('.'), 0)), 'name')<CR>
-
 " Autres
+:nmap <silent> <F5> :e<CR>
 :nmap <silent> <C-F5> :w<CR>:e<CR>
