@@ -1,24 +1,28 @@
 " Couper, copier et coller avec le presse-papier du système
 if has('x11') && has('clipboard')
-	:nmap <silent> <C-F10> "+dd
-	:nmap <silent> <S-F10> "+yy
-	:nmap <silent> <F10> "+p
+	:nmap <C-F10> "+dd
+	:nmap <S-F10> "+yy
+	:nmap <F10> "+p
 
-	:vmap <silent> <C-F10> "+d
-	:vmap <silent> <S-F10> "+ygv
-	:vmap <silent> <F10> "+p
+	:vmap <C-F10> "+d
+	:vmap <S-F10> "+y
+	:vmap <F10> "+p
 
-	:imap <silent> <C-F10> <Esc>"+ddi
-	:imap <silent> <S-F10> <Esc>"+yyi
-	:imap <silent> <F10> <Esc>"+pi
+	:imap <C-F10> <Esc>"+ddi
+	:imap <S-F10> <Esc>"+yyi
+	:imap <F10> <Esc>"+pi
 endif
 
 " Opérations standards
-:nmap <silent> <C-s>	:w<CR>			" Sauvegarder
-:nmap <silent> <C-q>	:q<CR>			" Ferme le fichier actuel
-:nmap <silent> <C-S-q>  :qa<CR>			" Quitter (fermer tous)
+	" Sauvegarder
+:nmap <silent> <C-s>	:w<CR>
+:imap <silent> <C-S>	<Esc>:w<CR>i
+:vmap <silent> <C-s>	<Esc>:w<CR>gv
 
-:nmap <silent> <C-S-a>  ggVG			" Selectionner tout
+:nmap <silent> <C-q>	:q<CR>
+:nmap <silent> <C-S-q>  :qa<CR>
+
+:nmap <silent> <S-a>  ggVG
 
 " Déplacement ligne vers le haut / bas
 :nnoremap <silent> <C-Down> ddp
@@ -74,6 +78,7 @@ endif
 
 " Autocomplétion
 :imap <silent> <F2> 
+:imap <silent> <C-n> 
 :imap <silent> <F3> 
 :imap <silent> <F4> 
 
@@ -90,6 +95,9 @@ endif
 :nmap <silent> <F6> :SyntasticCheck<CR>:Errors<CR>
 :nmap <silent> <S-F6> :SyntasticReset<CR>:SyntasticCheck<CR>
 :nmap <silent> <C-F6> :SyntasticCheck<CR>
+
+" Coloration syntaxique (debugage)
+:nmap <silent> <C-y> :echo 'id : '.synID(line('.'), col('.'), 0).' - rule : '.synIDattr(synID(line('.'), col('.'), 0), 'name').' - highlight : '.synIDattr(synIDtrans(synID(line('.'), col('.'), 0)), 'name')<CR>
 
 " Autres
 :nmap <silent> <C-F5> :w<CR>:e<CR>
