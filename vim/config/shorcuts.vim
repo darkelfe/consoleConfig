@@ -95,4 +95,5 @@ endif
 :nmap <silent> <C-F6> :SyntasticCheck<CR>
 
 " Autres
+:nmap <silent> <F5> :e<CR>
 :nmap <silent> <C-F5> :w<CR>:e<CR>
