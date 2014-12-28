@@ -33,7 +33,7 @@ function! MyFoldFunction()
 	
 	"Cleanup unwanted things in first line
 	let sub_space = substitute(line, '/\*\|\*/\|{', '', 'g')
-	let sub = substitute(sub_space, '\(^\s*\)\@<=\s', '-', 'g')
+	let sub = substitute(sub_space, '\(^\s*\)\@<=\s\{'.&l:tabstop.'\}', '-', 'g')
 
 	"Calculate lines in folded text
 	let lines = v:foldend - v:foldstart + 1
