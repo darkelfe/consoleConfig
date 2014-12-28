@@ -24,3 +24,5 @@ autocmd BufEnter apti,*.rb										" Apti (ruby) : tabulation = 2 espaces
 	\ set tabstop=2|
 	\ set shiftwidth=2|
 	\ set expandtab
+
+autocmd BufEnter *.js :%foldo!
