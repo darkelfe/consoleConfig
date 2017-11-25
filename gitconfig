@@ -1,5 +1,5 @@
 [user]
-	name = darkelfe
+	name = darkelfe14728
 	email = jul.rosset@gmail.com
 [color]
 	diff = auto
@@ -14,9 +14,10 @@
 	st = status
 	br = branch
 	link = branch --track
-	ln = log -n
-	lns = log --stat -n
-	ls = log --stat
+	lo = log --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset - %Cgreen%cr%Creset - %s' --abbrev-commit
+	ls = log --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset - %Cgreen%cr%Creset - %s' --abbrev-commit --stat
+	ln = log --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset - %Cgreen%cr%Creset - %s' --abbrev-commit -n
+	lns = log --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset - %Cgreen%cr%Creset - %s' --abbrev-commit --stat -n
 	uf = checkout --
 	cb = checkout
 	push = push --tags
