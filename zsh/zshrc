@@ -59,6 +59,10 @@ alias la='ll -a'
 
 alias vim='vim -p'			# Ouvre les paramètres comme des onglets au lieu de buffers
 
+maj_calibre() {
+	sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.py | sudo python -c "import sys; main=lambda x:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main('/opt')"
+}
+
 #alias cclive='cclive -c'			# Continue automatiquement les DL
 #alias cclive-best='cclive --stream best'	# DL avec la qualité max
 
