@@ -1,3 +1,5 @@
+set runtimepath+=/usr/share/lilypond/current/vim/
+
 set encoding=utf-8					" Encodage par défaut
 
 set tabstop=4						" Tabulation de 8 caractères
