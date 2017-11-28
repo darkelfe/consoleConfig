@@ -13,6 +13,8 @@
 	ck = checkout
 	st = status
 	br = branch
+	brsa = "!f() { git push ${2-$(git config --get custom.serverbranch.remote)} ${2-$(git config --get custom.serverbranch.remote)}/${3-$(git config --get custom.serverbranch.branch)}:refs/heads/${1}; }; f"
+	brsd = "!f() { git push ${2-$(git config --get custom.serverbranch.remote)} :heads/${1}; }; f"
 	link = branch --track
 	lo = log --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset - %Cgreen%cr%Creset - %s' --abbrev-commit
 	ls = log --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset - %Cgreen%cr%Creset - %s' --abbrev-commit --stat
@@ -26,3 +28,10 @@
 	autocrlf = false
 [push]
 	default = simple
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
+[custom "serverbranch"]
+	remote = origin
+	branch = master
