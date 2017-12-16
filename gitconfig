@@ -21,6 +21,7 @@
 	uf = checkout --
 	cb = checkout
 	push = push --tags
+	untrack = rm --cached
 [core]
 	editor = vim
 	autocrlf = false
