@@ -10,6 +10,12 @@ setopt histignorealldups sharehistory
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
+bindkey '^[[H' beginning-of-line			# [Origin]
+bindkey '^[[F' end-of-line					# [Fin]
+bindkey '^[[2~' overwrite-mode				# [Insert]
+bindkey '^[[3~' delete-char					# [Suppr]
+bindkey '^[[5~' history-search-backward		# [Page-Up]
+bindkey '^[[6~' history-search-forward		# [Page-Down]
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000
@@ -67,3 +73,4 @@ maj_calibre() {
 #alias cclive-best='cclive --stream best'	# DL avec la qualité max
 
 alias 7z_max="7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on"
+alias maj="apti update && apti full-upgrade"
