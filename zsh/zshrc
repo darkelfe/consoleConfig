@@ -10,12 +10,12 @@ setopt histignorealldups sharehistory
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
-bindkey '^[[H' beginning-of-line			# [Origin]
-bindkey '^[[F' end-of-line					# [Fin]
+bindkey '[1~' beginning-of-line			# [Origin]
+bindkey '[4~' end-of-line					# [Fin]
 bindkey '^[[2~' overwrite-mode				# [Insert]
 bindkey '^[[3~' delete-char					# [Suppr]
-bindkey '^[[5~' history-search-backward		# [Page-Up]
-bindkey '^[[6~' history-search-forward		# [Page-Down]
+bindkey '[5~' history-search-backward		# [Page-Up]
+bindkey '[6~' history-search-forward		# [Page-Down]
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000
@@ -69,8 +69,26 @@ maj_calibre() {
 	sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.py | sudo python -c "import sys; main=lambda x:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main('/opt')"
 }
 
+find_php() {
+	# $1 : expression recherchée
+	# $2 : chemin
+	# $3 : option supplémentaires
+	arg_path=$2
+	if [ -z $arg_path ]; then
+		arg_path="."
+	fi
+	arg_options=$3
+	if [ -z $arg_options ]; then
+		arg_options="-n"
+	fi
+	find $arg_path -type f -iname "*.php" | xargs grep $arg_options $1
+}
+
 #alias cclive='cclive -c'			# Continue automatiquement les DL
 #alias cclive-best='cclive --stream best'	# DL avec la qualité max
 
 alias 7z_max="7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on"
 alias maj="apti update && apti full-upgrade"
+
+# Include other files
+source "$HOME/consoleConfig/zsh/ssh_agent"

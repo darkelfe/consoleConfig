@@ -22,7 +22,7 @@ Plugin 'ChrisYip/Better-CSS-Syntax-for-Vim'
 Plugin 'noprompt/vim-yardoc'
 Plugin 'php.vim--Hodge'
 
-Plugin 'https://bitbucket.org/teramako/jscomplete-vim.git'
+Plugin 'mattn/jscomplete-vim.git'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'othree/javascript-libraries-syntax.vim'
 

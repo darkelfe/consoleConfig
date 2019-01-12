@@ -1,4 +1,6 @@
-" Couper, copier et coller avec le presse-papier du système
+"runtime config/keyboard-remap.vim
+
+"Couper, copier et coller avec le presse-papier du système
 if has('x11') && has('clipboard')
 	:nmap <C-F10> "+dd
 	:nmap <S-F10> "+yy
@@ -41,7 +43,7 @@ endif
 " (dé)Pliage de code
 :nmap <silent> <C-Left> zc
 :nmap <silent> <C-Right> zo
-:nmap <silent> <C-S-Left> :%foldc!<CR>
+:nmap <silent> <C-S-Left> :%foldc!<CR>i
 
 :imap <silent> <C-Left> <Esc>zcki
 :imap <silent> <C-Right> <Esc>zoi
@@ -65,11 +67,11 @@ endif
 :nmap <silent> <M-Right> gt
 :nmap <silent>  :call A_askFile("File to open : ")<CR>:exec ":tabnew ". Filename<CR>
 
-:imap <silent> <M-Left> <Esc>gTi
-:imap <silent> <M-Right> <Esc>gti
+:imap <silent> <A-Left> <Esc>gTi
+:imap <silent> <A-Right> <Esc>gti
 
-:vmap <silent> <M-Left> gT
-:vmap <silent> <M-Right> gt
+:vmap <silent> <A-Left> gT
+:vmap <silent> <A-Right> gt
 
 " (dé)Indentation
 :nmap <silent> <Tab> >>
@@ -103,3 +105,5 @@ endif
 " Autres
 :nmap <silent> <F5> :e<CR>
 :nmap <silent> <C-F5> :w<CR>:e<CR>
+
+:imap <silent> <C-u> <Esc><Right>v<S-Right><Left>Ui
