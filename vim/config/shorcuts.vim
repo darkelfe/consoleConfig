@@ -28,7 +28,7 @@ endif
 :nmap <silent> <C-q>	:q<CR>
 :nmap <silent> <C-S-q>  :qa<CR>
 
-:nmap <silent> <S-a>  ggVG
+:nmap <silent> <C-a>  ggVG
 
 " Déplacement ligne vers le haut / bas
 :nnoremap <silent> <C-Down> ddp
