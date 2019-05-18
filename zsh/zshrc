@@ -44,7 +44,16 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
+# Include other files
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 		# Coloration syntaxique à la volée
+
+source ~/.zsh/ssh_agent				# Pour que ssh-add marche sans se plaindre de ssh-agent
+
+#	Fichiers de config perso à la machine
+for conf_file in ~/.zsh/config/ ;
+do
+	source $conf_file;
+done
 
 # USER part
 # 	Interface de demande
@@ -64,7 +73,9 @@ alias ll='ls -l'
 alias la='ll -a'
 
 alias vim='vim -p'			# Ouvre les paramètres comme des onglets au lieu de buffers
+alias 7z_max="7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on"
 
+alias maj="apti update && apti full-upgrade"
 maj_calibre() {
 	sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.py | sudo python -c "import sys; main=lambda x:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main('/opt')"
 }
@@ -83,12 +94,3 @@ find_php() {
 	fi
 	find $arg_path -type f -iname "*.php" -print0 | xargs --null grep $arg_options $1
 }
-
-#alias cclive='cclive -c'			# Continue automatiquement les DL
-#alias cclive-best='cclive --stream best'	# DL avec la qualité max
-
-alias 7z_max="7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on"
-alias maj="apti update && apti full-upgrade"
-
-# Include other files
-source "$HOME/consoleConfig/zsh/ssh_agent"
