@@ -15,3 +15,4 @@ let g:php_alt_arrays = 2
 let g:php_folding = 1
 let g:php_special_functions = 0
 let g:php_nested_functions = 1
+let g:php_show_semicolon_error = 0
