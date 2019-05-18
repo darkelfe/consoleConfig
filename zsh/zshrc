@@ -50,9 +50,9 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 		# Coloration
 source ~/.zsh/ssh_agent				# Pour que ssh-add marche sans se plaindre de ssh-agent
 
 #	Fichiers de config perso à la machine
-for conf_file in ~/.zsh/config/ ;
+for conf_file in ~/.zsh/config/* ;
 do
-	source $conf_file;
+	source $conf_file ;
 done
 
 # USER part
