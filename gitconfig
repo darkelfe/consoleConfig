@@ -13,6 +13,7 @@
 	ck = checkout
 	st = status
 	br = branch
+	bru = remote update origin --prune
 	brsa = "!f() { git push ${2-$(git config --get custom.serverbranch.remote)} ${2-$(git config --get custom.serverbranch.remote)}/${3-$(git config --get custom.serverbranch.branch)}:refs/heads/${1}; }; f"
 	brsd = "!f() { git push ${2-$(git config --get custom.serverbranch.remote)} :heads/${1}; }; f"
 	link = branch --track
