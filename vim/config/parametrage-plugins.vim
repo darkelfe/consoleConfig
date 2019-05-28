@@ -7,3 +7,5 @@ runtime config/plugin/vim-highlight.vim
 runtime config/plugin/jscomplete-vim.vim
 runtime config/plugin/vim-javascript-syntax.vim
 runtime config/plugin/javascript-libraries-syntax.vim
+runtime config/plugin/vim-multiple-cursor.vim
+runtime config/plugin/vim-easy-align.vim

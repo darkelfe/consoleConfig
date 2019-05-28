@@ -13,6 +13,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 Plugin 'majutsushi/tagbar'
 Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'junegunn/vim-easy-align'
+Plugin 'terryma/vim-multiple-cursors'
 
 " Plugin de syntaxe
 Plugin 'othree/html5.vim'
@@ -25,9 +27,6 @@ Plugin 'php.vim--Hodge'
 Plugin 'mattn/jscomplete-vim.git'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'othree/javascript-libraries-syntax.vim'
-
-"Plugin 'darkelfe/vim-highlight'
-"Plugin 'file:///home/darkelfe/Git/vim-highlight'
 
 " Thème
 Plugin 'tomasr/molokai'
