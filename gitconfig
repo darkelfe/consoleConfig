@@ -36,3 +36,7 @@
 [custom "serverbranch"]
 	remote = origin
 	branch = master
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
