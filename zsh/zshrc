@@ -10,8 +10,8 @@ setopt histignorealldups sharehistory
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
-bindkey '[1~' beginning-of-line			# [Origin]
-bindkey '[4~' end-of-line					# [Fin]
+bindkey '[H' beginning-of-line			# [Origin]
+bindkey '[F' end-of-line					# [Fin]
 bindkey '^[[2~' overwrite-mode				# [Insert]
 bindkey '^[[3~' delete-char					# [Suppr]
 bindkey '[5~' history-search-backward		# [Page-Up]
